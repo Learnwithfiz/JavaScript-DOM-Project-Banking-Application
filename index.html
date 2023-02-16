@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: violet;
+        }
+        #resetdiv{
+            width: 500px;
+            height: 400px;
+
+            box-shadow: 4px 5px 10px black;
+            border: 1px solid green;
+            margin: auto;
+            background-color: white;
+            padding-top: 40px;
+            margin-top: 160px;
+        }
+        .input{
+            width: 90%;
+            padding: 10px;
+            margin-left: 15px;
+            margin-top: 20px;
+            border: 1px solid blueviolet;
+            border-radius: 13px;
+            box-shadow: 1px 2px 5px rgb(0, 0, 0);
+
+             
+        }
+        h2{
+            text-align: center;
+            color: rgb(68, 65, 65);
+        }
+        #reset{
+             width: 30%;
+            text-align: center;
+            margin-top: 40px;
+            background-color: rgb(7, 168, 7);
+            color: white;
+            font-size: 1.4rem;
+            box-shadow: 1px 2px 5px rgb(0, 0, 0);
+            cursor: pointer;
+            padding: 10px 30px;
+            border: 1px solid blueviolet;
+            border-radius: 13px;
+        }
+        .center{
+            text-align: center;
+            
+        }
+        .depo{
+            width: 40%;
+            float: left;
+            background-color: blueviolet;
+            box-shadow: 4px 5px 10px black;
+            height: 300px;
+            color: white;
+            margin-top: 100px;
+        }
+        .width{
+            width: 40%;
+            float: left;
+            background-color: blueviolet;
+            height: 300px;
+            margin-left: 100px;
+            box-shadow: 4px 5px 10px black;
+            color: white;
+            margin-top: 100px;
+        }
+        #dis{
+            width: 90%;
+            margin:0 auto;
+         
+            height: 700px;
+            text-align: center;
+        }
+        hr{
+            display: none;
+        }
+        .bal{
+            width: 300px;
+            margin: 0 auto;
+            background-color: blueviolet;
+            height: 160px;
+            color: white; 
+            padding: 10px;
+            box-shadow: 4px 5px 10px black;
+        }
+        .add{
+            width: 30%;
+            text-align: center;
+            margin-top: 40px;
+            background-color: rgb(7, 168, 7);
+            color: white;
+            font-size: 1.4rem;
+            box-shadow: 1px 2px 5px rgb(0, 0, 0);
+            cursor: pointer;
+            padding: 10px 30px;
+            border: 1px solid blueviolet;
+            border-radius: 13px;
+          
+        }
+        .btn{
+            text-align: center;
+            margin: 0 auto;
+        }
+        .cc{
+            width: 90%;
+            padding: 10px;
+            margin-left: 15px;
+            margin-top: 20px;
+            border: 1px solid blueviolet;
+            border-radius: 13px;
+            box-shadow: 1px 2px 5px rgb(0, 0, 0);
+        }
+        h1{
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+     <div id="resetdiv">
+         <h2>Login FIZ BANK</h2> 
+         <input type="text" class="input"  id="name" placeholder="Enter Your Account Number" required><br>
+         <input type="password" class="input" name="name"placeholder="Enter Your Password" id="pass"required>
+        <div class="center">
+            <input  type="submit" id="reset" value="submit" name="" id=""> 
+        </div>
+    </div>
+  
+   <div id="dis">
+    <div class="bal">
+        <h1>Balance <span id="Balance">1200</span></h1>
+    </div>
+     <div class="depo">
+        <h1>Deposit: <span id="Deposit"> 00</span></h1>
+        <input type="text" class="cc" id="input-balance">
+      <div class="btn">  <button id="add" class="add">add </button></div><br><br><hr>
+     </div>
+    
+
+    <div class="width">
+        <h1>withdraw <span id="Widthrow">00</span></h1>
+        <input type="text"class="cc"  id="input_width">
+      <div class="btn">
+        <button id="btn"class="add">withdraw</button>
+      </div>
+    </div>
+     
+
+   </div>
+
+   
+    <script>
+        var add= document.getElementById("add");
+      
+        
+        add.addEventListener('click',function(){
+             var input_balance = document.getElementById("input-balance").value;
+             var inp = parseFloat(input_balance);
+          
+             var Deposit = document.getElementById("Deposit").innerHTML;
+             var NewDepo = parseFloat(Deposit);
+             var Balance = document.getElementById("Balance").innerHTML;
+             var NewBalance = parseFloat(Balance);
+             
+             var total =  NewBalance + inp;
+             document.getElementById("Balance").innerHTML=total.toFixed(2);
+
+             //for deposit  
+             var depo =  NewDepo+inp;
+             document.getElementById("Deposit").innerHTML=depo.toFixed(2);
+
+            // return NewBalance;
+        });
+
+        var widthrow= document.getElementById("btn");
+        widthrow.addEventListener('click',function (){
+             var input_width = document.getElementById("input_width").value;
+             var new_width = parseFloat(input_width);
+             
+             var width = document.getElementById("Widthrow").innerHTML;
+             var curent_width = parseFloat(width);
+
+           
+
+             // clculate main balance
+             var Balance = document.getElementById("Balance").innerHTML;
+             var NewBalance = parseFloat(Balance);
+             
+
+
+              if(NewBalance<1200 || NewBalance == 1200  ){
+                  alert("have no balance");
+              }
+              else{
+
+                var my = new_width+curent_width;
+               
+                document.getElementById("Widthrow").innerHTML=my.toFixed(2);
+                var cal = NewBalance - new_width;
+                document.getElementById("Balance").innerHTML=cal.toFixed(2);
+              }
+        });
+
+
+    var reset = document.getElementById("reset");
+  var dis = document.getElementById("dis");
+  dis.style.display="none";
+    reset.addEventListener('click',function(){
+    var name = document.getElementById("name").value;
+    var pass  =document.getElementById("pass").value;
+    if(name=='' ){
+
+        alert('account number is required ');
+    }
+    else if( pass==''){
+        alert('password is required ');
+    }
+    else{
+        var resetdiv = document.getElementById("resetdiv");
+
+          resetdiv.style.display="none";
+          dis.style.display="block";
+    }
+      
+
+      
+    })
+    </script>
+</body>
+</html>

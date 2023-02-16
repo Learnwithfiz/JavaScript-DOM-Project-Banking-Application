@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-box" id="login-box">
+        <h2>Login My Bank</h2>
+        <br><br><br>
+        <input id="acc_no" class="input-login" type="text" placeholder="your account number"><br><br>
+        <input id="pass"  class="input-login" type="password" placeholder="your password">
+     <br><br>
+     <div class="btn">
+         <button class="login" id="login-btn">Login</button>
+     </div>
+    </div>
+   
+
+      <div class="main-page-balance" id="main-page">
+         
+         <div class="balance">
+             <h1>Your Balance is : <span id="total-balance">1000</span></h1>
+         </div>
+
+        
+            <div class="left-div">
+                <h1>Deposit <span id="total-deposit">00</span></h1>
+                <input class="deposit" id="deposit_input" type="text" placeholder="deposit quantity" >
+               <div class="addbtn"> 
+                   <button id="Add_depositBTN" class="add">ADD MONEY</button>
+            </div>
+            </div>
+            <div class="left-div">
+                <h1 id="text">withdraw <span id="withdraw_total">00</span></h1>
+                <input class="deposit" id="withdraw_input" type="text" placeholder="withdraw quantity" >
+               <div class="addbtn"> 
+                   <button class="add" id="withdraw">withdraw</button>
+            </div>
+          </div>
+          </div>
+      
+
+     
+    <script src="index.js"></script>
+</body>
+</html>
